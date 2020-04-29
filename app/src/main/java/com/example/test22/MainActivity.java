@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
      Button btn_move;
+     Button btn_upload;
      EditText sub_text;
      String str;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn_move =findViewById(R.id.btn_move);
+        btn_upload =findViewById(R.id.btn_uploadmove);
         sub_text=findViewById(R.id.sub_text);
 
 
@@ -32,5 +34,13 @@ public class MainActivity extends AppCompatActivity {
           }
       } );
 
+        btn_upload.setOnClickListener(new View.OnClickListener(){
+            //이벤트발생
+            @Override
+            public void onClick(View v) {   //클릭이벤트
+                Intent intent=new Intent(MainActivity.this,uploadActivity.class);
+                startActivity(intent);
+            }
+        } );
     }
 }
